@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+.edit-user-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+}
+.edit-user-container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4267b2;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    
+}
+
+.edit-user-container header p {
+    font: 700 24px Roboto, sans-serif;
+    color: #FFF;
+    margin-top: 20px;
+}
+
+.edit-user-component {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    justify-content: center;
+    background-color: rgb(227, 233, 233);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+
+.edit-user-component p {
+    font: 700 24px Roboto, sans-serif;
+    color: #2f60c2;
+    
+}
+
+@media only screen and (max-width: 600px){
+    .edit-user-component p{
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
+.edit-user-component form {
+    width: 50%;
+    min-width: 250px;
+    margin: 20px auto;
+    
+}
+
+.edit-user-component form input {
+    
+    width: 100%;
+    height: 60px;
+    color: black;
+    border: 1px solid #dcdcd6;
+    border-radius: 8px;
+    font: 500 24px Roboto, sans-serif;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px){
+    .edit-user-component form input{
+        font: 500 18px Roboto, sans-serif;
+    }
+}
+
+.edit-user-component form .button-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+
+.edit-user-component form .button-group button{
+    width: 40%;
+    height: 40px;
+    background:rgb(74, 187, 70);
+    border: 0;
+    border-radius: 8px;
+    color: #FFF;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    transition: filter 0.2s;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    
+}
+
+.edit-user-component form .button-group button:first-child{
+    background-color: coral;
+}

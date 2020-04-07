@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+.container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+}
+.container header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4267b2;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.container header p {
+    font: 700 24px Roboto, sans-serif;
+    color: #FFF;
+    margin-top: 20px auto;
+}
+
+
+.component {
+    width: 100%;
+    height: auto;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    
+}
+
+.component div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline-start: 40px;
+    padding-inline-end: 40px;
+}
+.component div button {
+    width: 30%;
+    height: 40px;
+    background: rgb(74, 187, 70);
+    border: 0;
+    border-radius: 8px;
+    color: #FFF;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    cursor: pointer;
+    outline: none;
+    
+}
+.component div button a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.component div p {
+    font: 700 24px Roboto, sans-serif;
+    margin-top: 15px;
+}
+
+.component ul {
+    margin:20px 0;
+    list-style: none;
+    border: 0;
+}
+
+.component ul li {
+    
+    width: 80% ;
+    max-width: 400px;
+    background-color: #e9ebee;
+    padding: 10px;
+    border-radius: 8px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    position: relative;
+    margin-right: 0;
+    
+}
+@media only screen and (max-width: 600px) {
+    
+    .component ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 70px;
+    }
+    .component div button {
+        width: 45%;
+    }
+
+  }
+.component ul li strong{
+    font-size: 18px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+.component ul li a {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border: 0;
+    color: #4267b2;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .component ul li a{
+        left: 35%;
+        margin-top: 50px;
+        padding-top: 5px;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+    
+  }
+
+
+
