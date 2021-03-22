@@ -5,7 +5,7 @@ import './style.css'
 
 import api from '../../services/api'
 
-export default function NewUsers(){
+export default function EditUsers(){
 
     const [nome, setNome] = useState('');
     const [telefone, setTelefone] = useState('');
@@ -28,7 +28,6 @@ export default function NewUsers(){
                 Authorization : predioId,
             }
         }).then(response => {
-            
             setNome(response.data.nome)
             setTelefone(response.data.telefone)
             setWhatsapp(response.data.whatsapp)
@@ -38,8 +37,9 @@ export default function NewUsers(){
             setVencimento_aluguel(response.data.vencimento_aluguel)
             setNumeroQuarto(response.data.numero_quarto)
             setTipo(response.data.tipo)
+            
         })
-    }, [userID, predioId]);
+    }, [userID, predioId])
 
 
     async function handleEditUser(e){
@@ -65,7 +65,7 @@ export default function NewUsers(){
                 }
             })
             alert(`${nome} teve seus dados editados.`)
-            history.push('/users')
+            history.push('/payment')
 
         } catch (error) {
             alert('Não foi possível salvar')
@@ -73,7 +73,7 @@ export default function NewUsers(){
     }
 
     function handleBack(){
-        history.push('/users')
+        history.push('/payment')
     }
 
 
@@ -85,7 +85,7 @@ export default function NewUsers(){
             </header>
 
             <div className='edit-user-component' >
-                <p>EDITAR MORADORES</p>
+                <p>EDITAR MORADOR</p>
             
 
                 <form onSubmit={handleEditUser}>
@@ -96,7 +96,7 @@ export default function NewUsers(){
                     />
                     <input 
                         placeholder='telefone' 
-                        value={telefone} 
+                        value={telefone}
                         onChange={e => setTelefone(e.target.value)} 
                     />
                     <input 
@@ -143,11 +143,7 @@ export default function NewUsers(){
                     </div>
 
                 </form>
-                
-                    
-                    
-                    
-                </div>
+            </div>
         </div>
     )
 }

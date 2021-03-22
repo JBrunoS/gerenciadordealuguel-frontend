@@ -3,7 +3,7 @@
 .user-container {
     width: 100%;
     max-width: 1120px;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
 
 }
@@ -21,6 +21,7 @@
     font: 700 24px Roboto, sans-serif;
     color: #FFF;
     margin-top: 20px;
+    
 }
 
 
@@ -53,10 +54,9 @@
     outline: none;
     text-decoration: none;
 }
-
 .user-component div button:first-child{
     width: 10%;
-    background:rgb(214, 43, 66);
+    background:rgb(231, 30, 57);
     margin-right: 80px;
 }
 
@@ -65,8 +65,47 @@
     margin-top: 20px;
 }
 
+.user-component .date-picker {
+    
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.user-component .date-picker select {
+    width: 95%;
+    height: 100%;
+    font: 500 24px Roboto, sans-serif;
+    border-radius: 4px;
+    padding-left: 4%;
+}
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main div{
+    width: 95%;
+    height: 55px;
+    margin-top: 16px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
 
 @media only screen and (max-width: 600px) {
+    .user-container header p {
+        font: 600 20px Roboto, sans-serif;
+        
+        
+    }
     .user-component div {
         padding-inline-start: 5px;
         padding-inline-end: 5px;
@@ -98,7 +137,6 @@
     border-radius: 8px;
     background-color: #e9ebee;
     font: 500 24px Roboto, sans-serif;
-    cursor: pointer;  
 }
 
 @media only screen and (max-width: 600px) {

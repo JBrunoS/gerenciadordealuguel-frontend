@@ -1,5 +1,5 @@
 import React, { useEffect, useState }from 'react'
-import {FiTrash2, FiArrowLeft, FiEdit} from 'react-icons/fi'
+import {FiArrowLeft, FiArrowRight} from 'react-icons/fi'
 import { useHistory, Link } from 'react-router-dom'
 
 import './style.css'
@@ -27,17 +27,11 @@ export default function Users() {
         history.push('/');
     }
 
-    async function handleDelete(id){
-        try {
-            await api.delete(`users/${id}`, {
-                headers: {
-                    Authorization: predioId,
-                }
-            })
-            setIncidents(incidents.filter(incident => incident.id !== id))
-        } catch (error) {
-            alert('Falha ao excluir o registro');
-        }
+    function goToPayment(id, name, room){
+        localStorage.setItem('userID', id)
+        localStorage.setItem('userName', name)
+        localStorage.setItem('userQuarto', room)
+        history.push('/payment')
     }
     
     
@@ -49,26 +43,31 @@ export default function Users() {
             
                 <div className='user-component' >
                     <div>
-                        <button type='button' onClick={goBack} className='button'><FiArrowLeft size='16px' color='#FFF' />Voltar</button>
+                        <button 
+                            type='button' 
+                            onClick={goBack} className='button'
+                        >
+                            <FiArrowLeft size='16px' color='#FFF' />
+                            Voltar
+                        </button>
                         <p>USUÁRIOS</p>
                         <Link to='/new/user' className='button'>Novo</Link>
                     </div>
                     
-                        {incidents.map(incidents => (
+                        {incidents.map(incident => (
                             
-                            <div className='user-details' key={incidents.id}>
-                            <span>{incidents.nome}</span>
-                            <span>Kitnet {incidents.numero_quarto}</span>
-                            <span>Venc: {incidents.vencimento_aluguel}</span>
-                            <Link to='/edit/users' ><FiEdit size='24px' color='orange' onClick={() => localStorage.setItem('userID', incidents.id)} /></Link>
-                            <Link to='/users'><FiTrash2 size='24px' color='red' onClick={() => handleDelete(incidents.id)}/></Link>
+                            <div className='user-details' key={incident.id} onClick={() => goToPayment(incident.id, incident.nome, incident.numero_quarto)}>
+                                <span>{incident.nome}</span>
+                                <span>Kitnet {incident.numero_quarto}</span>
+                                <span>Venc: {incident.vencimento_aluguel}</span>
+                            {/*   
+                                <Link to='/payment' ><FiDollarSign size='24px' color='green' onClick={() => localStorage.setItem('userID', incidents.id)} /></Link>
+                                <Link to='/edit/users' ><FiEdit size='24px' color='orange' onClick={() => localStorage.setItem('userID', incidents.id)} /></Link>
+                                <Link to='/users'><FiTrash2 size='24px' color='red' onClick={() => handleDelete(incidents.id)}/></Link> 
+                            */}
+                                <Link to='/payment'><FiArrowRight size='24px' color='blue' /></Link>
                             </div>
                         ))}
-
-                    
-
-                    
-                    
                     
                 </div>
         </div>
