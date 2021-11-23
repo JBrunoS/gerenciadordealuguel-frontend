@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import {FiArrowLeft, FiDollarSign, FiEdit, FiTrash2} from 'react-icons/fi'
+import {FiArrowLeft, FiCheck, FiDollarSign, FiEdit, FiTrash2} from 'react-icons/fi'
 
 import './style.css'
 
@@ -11,7 +11,7 @@ import api from '../../services/api'
 export default function Payment(){
     const [incidents, setIncidents] = useState([])
     const [meses, setMeses] = useState([]);
-    const [year, setYear] = useState('');
+    const [year, setYear] = useState(new Date().getFullYear());
 
 
     const history = useHistory();
@@ -121,8 +121,38 @@ export default function Payment(){
                 
                     <div className='main'>
                             { meses.map(meses => (
-                                <div key={meses.id} style={{backgroundColor: 'green'}}>
-                                    <p>{meses.mes}</p>
+                                <div key={meses.id}>
+                                    <p>{(() =>{
+                                        switch (meses.mes) {
+                                            case 1:
+                                                return 'Janeiro'
+                                            case 2:
+                                                return 'Fevereiro'
+                                            case 3:
+                                                return 'Março'
+                                            case 4:
+                                                return 'Abril'
+                                            case 5:
+                                                return 'Maio'
+                                            case 6:
+                                                return 'Junho'
+                                            case 7:
+                                                return 'Julho'
+                                            case 8:
+                                                return 'Agosto'
+                                            case 9:
+                                                return 'Setembro'
+                                            case 10:
+                                                return 'Outubro'
+                                            case 11:
+                                                return 'Novembro'
+                                            case 12:
+                                                return 'Dezembro'
+                                        
+                                            default:
+                                                break;
+                                        }
+                                    })(meses.mes)}<FiCheck size='20px' color='#FFF'  style={{ marginLeft: '20px' }}/></p>
                                 </div>
                             ))
                             }

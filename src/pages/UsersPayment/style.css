@@ -97,13 +97,14 @@
     border-radius: 5px;
     justify-content: center;
     align-items: center;
+    background-color: #31a527;
+    color: #FFF;
 }
 
 
 @media only screen and (max-width: 600px) {
     .user-container header p {
-        font: 600 20px Roboto, sans-serif;
-        
+        font: 600 16px Roboto, sans-serif;
         
     }
     .user-component div {
